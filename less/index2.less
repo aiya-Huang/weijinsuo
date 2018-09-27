@@ -1,0 +1,233 @@
+@borderColor: #ccc;
+@aColor: #666;
+@mainColor: #e92322;
+// 头部样式
+#header {
+    border-bottom: 1px solid @borderColor;
+    .container {
+        .row {
+            >div {
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                border-right: 1px solid @borderColor;
+                a {
+                    text-decoration: none;
+                    color: @aColor;
+                    font-size: 12px;
+                    position: relative;
+                    img {
+                        display: none;
+                        z-index: 999;
+                    }
+                    &:hover {
+                        img {
+                            display: block;
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+                        }
+                    }
+                }
+            }
+            >div:last-child {
+                border-right: 0px;
+            }
+        }
+    }
+}
+
+// 导航栏样式
+#nav {
+    background-color: white;
+    margin-bottom: 0px;
+    .navbar-header {
+        height: 80px;
+        .navbar-brand {
+            font-size: 30px;
+            line-height: 50px;
+            .icon-icon {
+                color: @mainColor;
+            }
+            .icon-logo {
+                color: #000;
+            }
+        }
+    }
+    .navbar-collapse {
+        .navbar-nav {
+            >li {
+                >a {
+                    height: 80px;
+                    line-height: 50px;
+                    &:hover {
+                        border-bottom: 2px solid @mainColor;
+                    }
+                }
+                &.active {
+                    a {
+                        background-color: white;
+                        border-bottom: 2px solid @mainColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 轮播图
+#slide {
+    .carousel-inner {
+        >.item {
+            .large-img {
+                display: block;
+                width: 100%;
+                height: 410px;
+                background-position: center center;
+            }
+        }
+    }
+}
+
+// 特色介绍
+#feature {
+    border-bottom: 1px solid @borderColor;
+    padding: 30px 0;
+    .row {
+        .media {
+            margin-top: 10px;
+            >a {
+                color: @aColor;
+                &:hover {
+                    color: @mainColor;
+                }
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// 排队预约
+#booking {
+    border-bottom: 1px solid @borderColor;
+    padding: 20px 0;
+}
+
+// 特别推荐
+#product {
+    padding: 20px 0;
+    background-color: #f0f0f0;
+    .nav-tabs{
+        >li{
+            >a{
+                color: #000;
+                border: 0;
+                background-color: transparent;             
+            }
+            &.active{
+                a{
+                    border-bottom: 3px solid @mainColor;
+                }
+                
+            }
+        }
+    }
+    .tab-content{
+        .product{
+            position: relative;
+            &.red{
+                background-color: @mainColor;
+                color: #fff;
+                .product-left::before{
+                    content: "\e915";
+                    font-family: 'itcast';
+                    position: absolute;
+                    font-size: 30px;
+                    left: 0;
+                    top: -6px;
+                    color: #fff;
+
+                }
+                
+            }
+            margin-top: 20px;
+            background-color: #fff;
+            display: flex;
+            .product-left{
+                padding: 10px;
+                flex: 1;
+                height: 160px;
+                >h4{
+                    text-align: center;
+                }
+                >.product-price{
+                    margin-bottom: 10px;
+                    p{
+                        margin-bottom: 0;
+                    }
+                    .pull-right{
+                        text-align: right;
+                    }
+                }
+            }
+            .product-right{
+                height: 160px;
+                width: 120px;
+                border-left: 1px dashed @borderColor;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                strong{
+                    font-size: 30px;
+                }
+                p{
+                    margin-bottom: 0;
+                }
+                &::before,&::after{
+                    content: "";
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background-color: #f0f0f0;
+                    left: -8px;
+                }
+                &::before{
+                    top: -8px;
+                }
+                &::after{
+                    bottom: -8px;
+                }
+                .tooltips{
+                    button:first-child{
+                       padding: 2px 5px;
+                       background-color: transparent;
+                       border-color: @mainColor;
+                       color: @mainColor;
+                      
+                    }
+                    button:last-of-type{
+                        padding: 2px 5px;
+                        background-color: transparent;
+                        border-color: blue;
+                        color: blue;
+                    }
+                    
+                    
+                }
+            }
+        }
+    }
+}
+
+// 全部新闻
+#news{
+    padding: 40px 0;
+    .container{
+        h4{
+            
+        }
+    }
+}

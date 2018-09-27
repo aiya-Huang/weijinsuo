@@ -1,0 +1,337 @@
+@borderColor: #ccc;
+@aColor: #666;
+@mainColor: #e92322;
+// 头部样式
+#header {
+    border-bottom: 1px solid @borderColor;
+    .container {
+        .row {
+            >div {
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                border-right: 1px solid @borderColor;
+                a {
+                    text-decoration: none;
+                    color: @aColor;
+                    font-size: 12px;
+                    position: relative;
+                    img {
+                        display: none;
+                        z-index: 999;
+                    }
+                    &:hover {
+                        img {
+                            display: block;
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+                        }
+                    }
+                }
+            }
+            >div:last-child {
+                border-right: 0px;
+            }
+        }
+    }
+}
+
+// 导航栏样式
+#nav {
+    background-color: white;
+    margin-bottom: 0px;
+    .navbar-header {
+        height: 80px;
+        .navbar-brand {
+            font-size: 30px;
+            line-height: 50px;
+            .icon-icon {
+                color: @mainColor;
+            }
+            .icon-logo {
+                color: #000;
+            }
+        }
+    }
+    .navbar-collapse {
+        .navbar-nav {
+            >li {
+                >a {
+                    height: 80px;
+                    line-height: 50px;
+                    &:hover {
+                        border-bottom: 2px solid @mainColor;
+                    }
+                }
+                &.active {
+                    a {
+                        background-color: white;
+                        border-bottom: 2px solid @mainColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 轮播图
+#slide {
+    .carousel-inner {
+        >.item {
+            .large-img {
+                display: block;
+                width: 100%;
+                height: 410px;
+                background-position: center center;
+            }
+        }
+    }
+}
+
+// 特色介绍
+#feature {
+    border-bottom: 1px solid @borderColor;
+    padding: 30px 0;
+    .row {
+        .media {
+            margin-top: 10px;
+            >a {
+                color: @aColor;
+                &:hover {
+                    color: @mainColor;
+                }
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// 排队预约
+#booking {
+    border-bottom: 1px solid @borderColor;
+    padding: 20px 0;
+}
+
+// 特别推荐
+#product {
+    padding: 40px 0;
+    background-color: #f0f0f0;
+    .ul-wapper {
+        // 添加局部滚动条，给ul的父盒子添加overflow: auto;
+        overflow: auto;
+        // tab标题栏
+        .nav-tabs {
+            // 给ul一个宽度，为所有li标签的宽度之和
+            width: 580px;
+            border: none;
+            >li {
+                >a {
+                    color: #333;
+                    border: none;
+                    font-size: 14px;
+                    background-color: transparent;
+                }
+                &.active {
+                    border-bottom: 3px solid @mainColor;
+                }
+            }
+        }
+    }
+    // 
+    .tab-content {
+        .productBox {
+            position: relative;
+            margin-top: 30px;
+            background-color: #fff;
+            // display: flex;
+            &.active {
+                background-color: @mainColor;
+                color: #fff;
+                >.productLeft::before {
+                    content: "\e915";
+                    font-family: 'itcast';
+                    position: absolute;
+                    left: 0;
+                    top: -6px;
+                    font-size: 30px;
+                }
+            }
+            >.productLeft {
+                height: 160px;
+                margin-right: 120px;
+                padding: 10px;
+                // flex: 1;
+                >h4 {
+                    text-align: center;
+                }
+                >.row {
+                    >div {
+                        margin-top: 10px;
+                        >p {
+                            margin-bottom: 0;
+                        }
+                        &:nth-child(2n) {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            >.productRight {
+                position: absolute;
+                width: 120px;
+                height: 160px;
+                right: 0;
+                top: 0;
+                border-left: 1px dashed #ccc;
+                padding-top: 40px;
+                >p {
+                    text-align: center;
+                    margin-bottom: 0px;
+                    >strong {
+                        font-size: 30px;
+                        font-weight: bold;
+                    }
+                }
+                &::before,
+                &::after {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    background-color: #f0f0f0;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: -8px;
+                }
+                &::before {
+                    top: -8px;
+                    box-shadow: 1px 1px 1px #ccc;
+                }
+                &::after {
+                    bottom: -8px;
+                    box-shadow: -1px -1px 1px #ccc;
+                }
+                >.tooltips {
+                    width: 100%;
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    top: 20px;
+                    text-align: center;
+                    >a {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        text-decoration: none;
+                    }
+                    >a:first-child {
+                        color: #e92322;
+                        border: 1px solid #e92322;
+                    }
+                    >a:last-child {
+                        color: #0f0;
+                        border: 1px solid #0f0;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 全部新闻
+#news {
+    padding: 40px 0;
+    .container {
+        >div {
+            >h4 {
+                border-bottom: 1px dashed #ccc;
+                line-height: 40px;
+                text-align: center;
+                position: relative;
+                &::after {
+                    content: '';
+                    border: 1px solid #ccc;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: -10px;
+                    bottom: -5px;
+                }
+            }
+            .nav-tabs {
+                border-bottom: 0px;
+                // 注意这里写991px,因为中屏幕和小屏幕中介线是992px，如果写992px，会发生叠加到一起
+                @media(max-width:991px){
+                    >li{
+                        width: 25%;
+                    }
+                }
+                >li {
+                    margin-bottom: 20px;
+                    >a {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        text-align: center;
+                        border: 0;
+                        color: @borderColor;
+                        &:hover {
+                            background-color: #e92322;
+                        }
+                        >i {
+                            font-size: 30px;
+                        }
+                    }
+                    &.active {
+                        >a {
+                            background-color: #e92322;
+                        }
+                    }
+                }
+            }
+            .tab-content {
+                ul {
+                    li {
+                        list-style: none;
+                        line-height: 40px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 合作伙伴
+#parter {
+    padding: 40px 0;
+    .container {
+        h4 {
+            font-size: 24px;
+            text-align: center;
+        }
+        ul {
+            // 这里用伸缩布局好一点，可以让其适应移动端，在宽度不能盛放9个元素时，自动换行
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                // 平均分成9块
+                flex: 1;
+                list-style: none;
+                float: left;
+                >a {
+                    color: #333;
+                    text-decoration: none;
+                    &:hover {
+                        color: @mainColor;
+                    }
+                    >i {
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
